@@ -1,7 +1,7 @@
 //display the current date and time
 let now = new Date();
 
-let currentTime = document.querySelector("p.currentTime");
+let currentTime = document.querySelector("li.currentTime");
 
 let hours = now.getHours();
 if (hours < 10) {
@@ -9,7 +9,7 @@ if (hours < 10) {
 }
 let minutes = now.getMinutes();
 if (minutes < 10) {
-  hours = "0" + minutes;
+  minutes = "0" + minutes;
 }
 let date = now.getDate();
 
@@ -62,7 +62,7 @@ function showTemp(response) {
   document.querySelector("h2").innerHTML = response.data.name;
   document.querySelector("#celsius").innerHTML = `${Math.round(
     response.data.main.temp
-  )}°`;
+  )}°C`;
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
