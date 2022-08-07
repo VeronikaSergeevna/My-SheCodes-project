@@ -73,3 +73,7 @@ button {
   border-color: #efefef;
   border-radius: 0.25rem;
 }
+
+li {
+  text-transform: capitalize;
+}

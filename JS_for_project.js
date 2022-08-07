@@ -59,6 +59,7 @@ form.addEventListener("submit", searchFor);
 
 // api
 function showTemp(response) {
+  console.log(response.data);
   document.querySelector("h2").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
@@ -71,7 +72,7 @@ function showTemp(response) {
   ).innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   document.querySelector(
     "#visibility"
-  ).innerHTML = `Visibility: ${response.data.weather[0].description}`;
+  ).innerHTML = `${response.data.weather[0].description}`;
 }
 
 function currentPosition(position) {
