@@ -5,11 +5,11 @@ let currentTime = document.querySelector("li.currentTime");
 
 let hours = now.getHours();
 if (hours < 10) {
-  hours = "0" + hours;
+  hours = `0${hours}`;
 }
 let minutes = now.getMinutes();
 if (minutes < 10) {
-  minutes = "0" + minutes;
+  minutes = `0 ${minutes}`;
 }
 let date = now.getDate();
 
@@ -39,8 +39,7 @@ let months = [
   "December",
 ];
 let month = months[now.getMonth()];
-currentTime.innerHTML =
-  day + ", " + date + " " + month + ", " + hours + ":" + minutes;
+currentTime.innerHTML = `${day}, ${date} ${month}, ${hours}:${minutes}`;
 
 //Add a search engine, when searching for a city
 function search(city) {
