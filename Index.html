@@ -19,30 +19,44 @@
   <body>
     <div class="container">
       <div class="content">
+        s
         <h1 class="mainname">Weather forecast</h1>
         <div class="choosecity">
           <form id="search">
             <input
               type="text"
               id="searchForCity"
+              class="chooseYourCity"
               placeholder="➡️ Choose your city"
             />
-            <input type="submit" value="Search 🔍" />
-            <button id="currentLocation">Current</button>
+            <input
+              id="inputButton"
+              type="submit"
+              value="Search for a city 🔍"
+            />
+            <button id="currentLocation">Current city</button>
           </form>
         </div>
         <div class="littlecontainer">
           <h2>Choose your location</h2>
           <div class="mainTemperature" id="mainTemperature">
-           <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="sky" id="icon" />
-           <strong id="temperature" class="temperature">14</strong>
-            <small id="weatherTemperature"> 
-              <span id="celsius"><a href="#" id="celsiusLink" class="active">°C</a> </span>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="sky"
+              id="icon"
+            />
+            <strong id="temperature" class="temperature">14</strong>
+            <small id="weatherTemperature">
+              <span id="celsius"
+                ><a href="#" id="celsiusLink" class="active">°C</a>
+              </span>
               <span class="separator">|</span>
-              <span id="fahrenheit"><a href="#" id="fahrenheitLink" class="active" >°F</a></span>
-            </small> 
+              <span id="fahrenheit"
+                ><a href="#" id="fahrenheitLink" class="active">°F</a></span
+              >
+            </small>
           </div>
-            <ul>
+          <ul>
             <li class="currentTime">Saturday, 25 June, 22:12</li>
             <li id="visibility">Visibility</li>
             <li id="humidity">Humidity: waiting...</li>
@@ -94,10 +108,8 @@
               </div>
             </div>
           </div>
-          </p>
         </div>
-        <p class="createdby"  
->
+        <p class="createdby">
           <a href="https://github.com/VeronikaSergeevna/My-SheCodes-project">
             Open-source code
           </a>

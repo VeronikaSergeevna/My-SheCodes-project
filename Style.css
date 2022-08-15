@@ -2,12 +2,14 @@ body {
   font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
+  background-image: url("sky.jpg");
+  background-image: url("sky.jpg");
 }
-
+title {
+  font-family: "Rubik", sans-serif;
+}
 .container {
   max-width: 700px;
-  border: 5 px solid;
-  border-radius: 20px;
   padding: 0%;
   border-style: hidden;
 }
@@ -15,11 +17,10 @@ body {
 .content {
   margin: 20px auto;
   max-width: 700px;
-  background-color: #e0ffcd;
   padding-bottom: 0;
 }
 .littlecontainer {
-  background-color: #fdffcd;
+  background-color: whitesmoke;
   padding: 30px;
   margin-top: 10px;
 }
@@ -33,6 +34,7 @@ body {
 .coosecity {
   text-align: center;
 }
+
 .createdby {
   margin: 40px auto;
   text-align: center;
@@ -58,13 +60,6 @@ li {
   color: black;
 }
 
-button {
-  color: #fff;
-  background-color: #0078d7;
-  border-color: #efefef;
-  border-radius: 0.25rem;
-}
-
 li {
   text-transform: capitalize;
 }
@@ -83,4 +78,28 @@ small {
   position: relative;
   top: -20px;
   font-size: 14px;
+}
+ul {
+  position: relative;
+  top: -20px;
+}
+.col-sm {
+  position: relative;
+  margin-bottom: -30px;
+}
+button {
+  width: 30%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px 1px #2a2929;
+  opacity: 0.9;
+}
+input {
+  width: 30%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px 1px #2a2929;
+  opacity: 0.9;
 }
