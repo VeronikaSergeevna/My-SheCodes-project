@@ -61,7 +61,7 @@ function showTemp(response) {
   console.log(response.data);
   document.querySelector("h2").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = `${Math.round(
-    celsiusTemperature
+    response.data.main.temp
   )}`;
   celsiusTemperature = Math.round(response.data.main.temp);
 
