@@ -43,7 +43,7 @@ currentTime.innerHTML = `${day}, ${date} ${month}, ${hours}:${minutes}`;
 
 //Add a search engine, when searching for a city
 function search(city) {
-  let apiKey = `4be40cda2262e1bbda336fc98ac66a97`;
+  let apiKey = `3fdc8cfbf2d6fa0116c9ae92d3df4f79`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
@@ -59,7 +59,7 @@ form.addEventListener("submit", searchFor);
 // api
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "4be40cda2262e1bbda336fc98ac66a97";
+  let apiKey = "3fdc8cfbf2d6fa0116c9ae92d3df4f79";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -96,7 +96,8 @@ function showTemp(response) {
 function currentPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = `4be40cda2262e1bbda336fc98ac66a97`;
+  let apiKey = `3fdc8cfbf2d6fa0116c9ae92d3df4f79`;
+  //4be40cda2262e1bbda336fc98ac66a97
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
@@ -134,25 +135,37 @@ let celsiusLink = document.querySelector("#celsiusLink");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 ///
 ///
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#weather-forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-sm">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-sm">
                 <ul>
-                  <li>${day}</li>
-                  <li>🌤</li>
-                  <li>⇡ 24°C </li> 
-                  <li>⇣ 13°C</li>
+                  <li class=days>${formatDay(forecastDay.dt)}</li>
+                  <li><img src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png" />
+</li>
+                  <li>⇡ ${Math.round(forecastDay.temp.max)}°C </li> 
+                  <li>⇣ ${Math.round(forecastDay.temp.min)}°C</li>
 
                 </ul>
               </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
