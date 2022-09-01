@@ -80,7 +80,7 @@ function showTemp(response) {
   ).innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   document.querySelector(
     "#visibility"
-  ).innerHTML = `${response.data.weather[0].description}`;
+  ).innerHTML = `Visibility: ${response.data.weather[0].description}`;
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
