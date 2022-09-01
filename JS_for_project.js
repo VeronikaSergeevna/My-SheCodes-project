@@ -111,29 +111,6 @@ function getLocation(event) {
 let locationButton = document.querySelector("#currentLocation");
 locationButton.addEventListener("click", getLocation);
 
-//showFahrenheitTemperature
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheitLink");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusLink = document.querySelector("#celsiusLink");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
-///
 ///
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
